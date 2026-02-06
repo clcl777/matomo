@@ -315,7 +315,7 @@ export default defineComponent({
         if (visitId) {
           const existing = list.querySelector(`#${visitId}`) as HTMLElement | null;
           if (existing) {
-            if (existing.innerHTML !== item.innerHTML) {
+            if (existing.getAttribute('data-hash') !== item.getAttribute('data-hash')) {
               updated = true;
             }
             existing.remove();
@@ -383,8 +383,19 @@ export default defineComponent({
         },
       );
 
+      const visits = $list.find('li.visit');
+      visits.tooltip({
+        items: '.visitorLogIconWithDetails',
+        track: true,
+        show: { delay: 100, duration: 0 },
+        hide: false,
+        content() {
+          return $('<ul>').html($('ul', $(this)).html());
+        },
+        tooltipClass: 'small',
+      });
+
       $list.tooltip({
-        items: '.visits-live-launch-visitor-profile',
         track: true,
         content() {
           const title = $(this).attr('title') || '';
@@ -392,18 +403,6 @@ export default defineComponent({
         },
         show: { delay: 100, duration: 0 },
         hide: false,
-      });
-
-      const visits = $list.find('li.visit');
-      visits.tooltip({
-        items: '.visitorLogIconWithDetails',
-        track: true,
-        show: false,
-        hide: false,
-        content() {
-          return $('<ul>').html($('ul', $(this)).html());
-        },
-        tooltipClass: 'small',
       });
     },
     setupVisibilityHandling() {
@@ -432,13 +431,17 @@ export default defineComponent({
         return;
       }
 
-      const tooltipElements = $list.find('li.visit .visitorLogIconWithDetails, .visits-live-launch-visitor-profile');
-      tooltipElements.each(function clearExisting() {
-        const visit = $(this);
-        if (visit.data('ui-tooltip')) {
-          visit.tooltip('destroy');
-        }
-      });
+      try {
+        $('li.visit', $list).tooltip('destroy');
+      } catch (e) {
+        // ignore
+      }
+
+      try {
+        $list.tooltip('destroy');
+      } catch (e) {
+        // ignore
+      }
     },
     onTabBlur() {
       if (this.isStarted) {
