@@ -24,6 +24,7 @@ use Piwik\Plugin\Report;
 use Piwik\Plugin\ReportsProvider;
 use Piwik\Plugins\API\Filter\DataComparisonFilter;
 use Piwik\Plugins\CoreHome\Columns\Metrics\EvolutionMetric;
+use Piwik\Plugins\PrivacyManager\CnilDataRounding;
 use Piwik\Request;
 
 /**
@@ -137,6 +138,11 @@ class DataTablePostProcessor
         $dataTable = $this->applyQueuedFilters($dataTable);
         $dataTable = $this->applyRequestedColumnDeletion($dataTable);
         $dataTable = $this->applyLabelFilter($dataTable);
+
+        if (CnilDataRounding::shouldApplyForRequest($this->request)) {
+            CnilDataRounding::roundCountMetrics($dataTable, $this->report);
+        }
+
         $dataTable = $this->applyMetricsFormatting($dataTable);
         return $dataTable;
     }
