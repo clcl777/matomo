@@ -157,7 +157,7 @@
         "Timezone": "Webサイトのタイムゾーン",
         "WeHopeYouWillEnjoyPiwik": "私たちがMatomoの開発を楽しんでいるように、皆さんもMatomoをお楽しみください。",
         "Welcome": "ようこそ",
-        "WelcomeHelp": "<p>Matomoは、訪問者のトラフィックを分析するための自由ソフトウェアです。</p><p>このプロセスは%sステップあり、約5分かかります。</p>",
+        "WelcomeHelp": "<p>Matomoは、訪問者からのトラフィックを分析するために使用される無料のソフトウェアです。</p><p>このプロセスは%sステップあり、約5分かかります。</p>",
         "WelcomeToCommunity": "Matomoコミュニティへようこそ。",
         "YouMayInstallPiwikNow": "%1$s今すぐMatomoをインストール%2$sできます"
     }
