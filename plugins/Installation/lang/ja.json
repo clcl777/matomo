@@ -117,7 +117,7 @@
         "SystemCheckOtherExtensions": "その他の拡張機能",
         "SystemCheckOtherFunctions": "その他の関数",
         "SystemCheckPackHelp": "Matomoでビジターを追跡するには`pack()`関数が必要です。",
-        "SystemCheckPageSpeedDisabled": "PageSpeedがオフになっています",
+        "SystemCheckPageSpeedDisabled": "PageSpeedの無効化",
         "SystemCheckPageSpeedWarning": "%s WebサーバーでPageSpeedモジュールをオフにすることをお勧めします。PageSpeedはMatomoにいくつかの問題を引き起こします。たとえば、壊れたページ レポート、壊れた行展開などです。このサーバーではmod_pagespeedをオフにしてください。",
         "SystemCheckParseIniFileHelp": "この組み込み関数は、ホストでオフになっています。Matomoはそれをエミュレートしようとしますが、さらなるセキュリティ制限に遭遇する可能性があります。トラッカーのパフォーマンスが影響を受けます。",
         "SystemCheckPdoAndMysqliHelp": "GNU/Linuxサーバーでは、次のオプションを使用してPHPをコンパイルできます。%1$s php.iniに次の行を追加します:%2$s",
