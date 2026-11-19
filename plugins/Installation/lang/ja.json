@@ -153,7 +153,7 @@
         "TablesReuse": "既存テーブルを再利用",
         "TablesUpdatedSuccess": "データベースが%1$sから%2$sに更新されました!",
         "TablesWarningHelp": "既存のデータベース テーブルを再利用するか、クリーン インストールを選択して既存のデータベース データをすべて消去します。",
-        "TablesWithSameNamesFound": "`%2$s`データベース内のいくつかの%1$sテーブルはMatomoが作成しようとしているテーブルと同じ名前を持っています",
+        "TablesWithSameNamesFound": "データベース内の一部の%1$sテーブル%2$sの名前が、Matomoが作成しようとしているテーブルと重複しています",
         "Timezone": "Webサイトのタイムゾーン",
         "WeHopeYouWillEnjoyPiwik": "私達がMatomoの開発を楽しんでいるように、Matomoのご利用をお楽しみください。",
         "Welcome": "ようこそ",
